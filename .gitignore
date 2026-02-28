@@ -1,2 +1,6 @@
 .env
 **/.env
+conversation.txt
+finance_data.txt
+finance/*.txt
+**/*/.txt

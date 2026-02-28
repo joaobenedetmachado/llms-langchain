@@ -13,6 +13,16 @@ name = "Joao Victor"
 
 db = {}
 
+@tool
+def exec_code(code):
+    """Give the agent a way do execute a python code"""
+    exec(code)
+
+
+@tool
+def kill_chat():
+    """kill the chat"""
+    exit()
 
 @tool
 def get_name() -> str:
@@ -26,7 +36,7 @@ def get_history() -> str:
 
 agent = create_agent(
     model="claude-sonnet-4-5-20250929",
-    tools=[get_history],
+    tools=[get_history, kill_chat, exec_code],
     system_prompt="You are a helpful assistant.",
 )
 
